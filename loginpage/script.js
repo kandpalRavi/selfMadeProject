@@ -1,45 +1,90 @@
-let thisYear =document.querySelector("#year");
-let thisMonth =document.querySelector("#month");
-let thisDay = document.querySelector("#date");
-let month=["January","February","March","April","May","June","July","August" ,"September","October","November","December"];
-(function popularMonth(){
-    month.forEach(function(elem){
-        let option=document.createElement("option");
-        option.textContent=elem;
-        thisMonth.append(option);
+let yearSelect = document.querySelector("#year");
+let monthSelect = document.querySelector("#month");
+let dateSelect = document.querySelector("#date");
+
+const months = ['January', 'February', 'March', 'April', 
+'May', 'June', 'July', 'August', 'September', 'October',
+'November', 'December'];
+
+(function populateMonths(){
+    months.forEach(function(elem){
+        let opt = document.createElement("option");
+        opt.textContent=elem;
+        monthSelect.append(opt);
     })
-    thisMonth.value="January"
+    monthSelect.value="January";
 })();
 
 
-function monthDate(month){
-    let date;
-if(month =="January" ||month =="March" ||month =="May" ||month =="July" ||month =="August" || month =="October"||month =="December"){
-    date=31;
-} 
-else if(month =="April" ||month =="June" ||month =="September"|| month =="November"){
-    date=30;
-}else{
+let previousDay;
 
-}
-console.log(month);
-for (let i=1;i<=date;i++){
-    let option =document.createElement("option");
-    option.textContent=i;
-    thisDay.append(option);
-}
+function populateDays(month){
+    while(dateSelect.firstChild){
+        dateSelect.removeChild(dateSelect.firstChild);
+    }
+    let dayNum;
 
-}
+    let year = yearSelect.value;
 
-function Year(){
+    if(month === 'January' || month === 'March' || 
+    month === 'May' || month === 'July' || month === 'August' 
+    || month === 'October' || month === 'December') {
+        dayNum = 31;
+    } else if(month === 'April' || month === 'June' 
+    || month === 'September' || month === 'November') {
+        dayNum = 30;
+    }else{
+        //Check for a leap year
+        if(new Date(year, 1, 29).getMonth() === 1){
+            dayNum = 29;
+        }else{
+            dayNum = 28;
+        }
+    }
 
-    let year=new Date().getFullYear();
+    for(let i=1;i<=dayNum;i++){
+        let option = document.createElement("option");
+        option.textContent=i;
+        dateSelect.appendChild(option);
+    }
 
-    for(let i=0;i<101;i++){
-        let option=document.createElement("option");
-        option.textContent=year-i;
-        thisYear.append(option);
+    if(previousDay){
+        dateSelect.value = previousDay;
+        if(dateSelect.value === ""){
+            dateSelect.value = previousDay - 1;
+        }
+        if(dateSelect.value === ""){
+            dateSelect.value = previousDay - 2;
+        }
+        if(dateSelect.value === ""){
+            dateSelect.value = previousDay - 3;
+        }
     }
 }
-monthDate(thisMonth.value);
-Year();
+
+function populateYears(){
+    let year = new Date().getFullYear();
+    for (let i=0;i<=101;i++){
+        let option=document.createElement("option");
+        option.textContent=year-i;
+        yearSelect.append(option);
+
+    }
+}
+populateDays(monthSelect.value);
+populateYears();
+
+yearSelect.onchange=function(){
+    // monthSelect.value;
+    populateDays(monthSelect.value);
+
+}
+
+monthSelect.onchange=function(){
+    // monthSelect.value;
+    populateDays(monthSelect.value);
+    
+}
+dateSelect.onchange=function(){
+    previousDay =dateSelect.value;
+}

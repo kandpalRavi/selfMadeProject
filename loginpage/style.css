@@ -1,0 +1,127 @@
+body{
+    background-color:#f0f2f5 ;
+}
+#heading{
+    font-size: 60px;
+    color: #1877f2 ;
+    margin-top: -5px;
+    /* font-style:; */
+}
+form {
+    margin: auto;
+    margin-top: -10px;
+    width: 33%;
+    border: 1px solid transparent;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #ffffff;
+    padding: 10px;
+}
+h1 {
+    text-align: center;
+    line-height: px;
+}
+h1+p {
+    text-align: center;
+    margin-top: -13px;
+}
+
+
+
+
+#contener{
+    /* width: 500px; */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    /* justify-content: space-between; */
+    /* height: 45px; */
+}
+
+.input_box{
+    margin: 10px 5px 10px 0px;
+    margin-top:10px;
+
+    height:33px;
+    width: 46%;
+    border-radius: 7px;
+    border: 1px solid;
+}
+.input_bo{
+    height:33px;
+    width: 96%;
+    margin:5px 0px 7px 0px;
+    border-radius: 7px;
+    border: 1px solid;
+
+
+}
+#pickDate{
+    font-size: 12px;
+    font-weight: lighter;
+    color: #8d949e;
+    margin-bottom: px;
+}
+#dob {
+    width: 98%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+#dob>select {
+    height: 33px;
+    border-radius: 6px;
+
+}
+#gen {
+    margin-top: -3px;
+    margin-bottom: -1px;
+    font-size: 12px;
+    /* font-weight: lighter; */
+    color: #8d949e;
+}
+.markgender{
+    /* width: 80px; */
+    height: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 6px;
+    
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.markgenderr>p{
+    font-size: 18px;
+}
+.text {
+    text-decoration: none;
+    color: #1877f2 ; 
+}
+.pg{
+    font-size: 13px;
+    color: #777777;
+    line-height: 18px;
+}
+#submit {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    height: 33px;
+    width: 175px;
+    border: 1px solid;
+    border-radius: 7px;
+    font-size: 18px;
+    font-weight:bold;
+    color: white;
+    background-color: #00a400;
+}
+#submit+P{
+    text-align: center;
+    font-size: 18px;
+}

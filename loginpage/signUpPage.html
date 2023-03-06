@@ -6,24 +6,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-Up</title>
+    <link rel="website icon" type="png"
+        href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <h1 id="heading">facebook</h1>
     <div>
         <form>
-            <h2> Create a new account</h2>
+            <h1> Create a new account</h1>
             <p>it's quick and easy</p>
             <hr>
             <input type="text" placeholder="First name" class="input_box">
             <input type="text" placeholder="Surname" class="input_box"><br>
 
-            <input type="text" placeholder="Mobile number or email address" class="input_box" id="email">
+            <input type="text" placeholder="Mobile number or email address" class="input_bo" id="email"><br>
 
-            <input type="password" placeholder="New password" class="input_box" id="password"><br>
+            <input type="password" placeholder="New password" class="input_bo" id="password"><br>
+            <p id="pickDate">Date Of Birth</p>
+            <div id="dob">
+                <select name="date" id="date"> </select>
+                <select id="month" id="month"></select>
+                <select name="year" id="year"></select>
+            </div><br>
 
-            <select name="date" id="date"> </select>
-            <select id="month" id="month"></select>
-            <select name="year" id="year"></select>
+            <p id="gen"> gender: </p>
+            <!-- <input type="radio" name="gender" value="male" class="gender">male
+            <input type="radio" name="gender" value="female" class="gender">female -->
+
+            <div id="contener">
+                <div class="markgender">
+                    <p><input type="radio" name="gender" value="male" class="gender"> </p>
+                    <p>Male</p>
+                </div>
+                <div class="markgender">
+                    <p><input type="radio" name="gender" value="female" class="gender"> </p>
+                    <p>Female</p>
+                </div>
+                <div class="markgender">
+                    <p><input type="radio" name="gender" value="costom" class="gender"> </p>
+                    <p>Costom</p>
+                </div>
+            </div>
+
+            <!-- <div class="contener">
+                <p><input type="radio" name="gender" value="male" class="gender"> </p>
+                <p>male</p>
+            </div>
+            <div class="contener">
+                <p><input type="radio" name="gender" value="female" class="gender"> </p>
+                <p>female</p>
+            </div> -->
+            <p class="pg">People who use our service may have uploaded your contact information to Facebook <a
+                    class="text" href="https://www.facebook.com/help/637205020878504">Lern More</a></p>
+            <p class="pg">By clicking Sign Up, you agree to our <a class="text"
+                    href="https://www.facebook.com/legal/terms/update">Term</a>,<a class="text"
+                    href="https://www.facebook.com/privacy/policy/?entry_point=data_policy_redirect&entry=0">privacy
+                    policy</a> and <a class="text"
+                    href="https://www.facebook.com/privacy/policies/cookies/?entry_point=cookie_policy_redirect&entry=0">cookie
+                    policy</a>.You may receive SMS notifications from us and can opt out at any time</p>
+            <input type="submit" id="submit" value="Sign Up">
+            <p><a class="text" href="loginpage.html">Alrady have an account ?</a></p>
         </form>
     </div>
 </body>
@@ -31,3 +75,4 @@
 </html>
 <!-- do not touch this -->
 <script src="script.js"></script>
+<!-- <script src="another.js"></script> -->
