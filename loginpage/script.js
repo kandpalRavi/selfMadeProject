@@ -88,3 +88,16 @@ monthSelect.onchange=function(){
 dateSelect.onchange=function(){
     previousDay =dateSelect.value;
 }
+
+document.querySelector("form").addEventListener("submit",thisData);
+let dataArr =[];
+function thisData(elem){
+    elem.preventDefault();
+    let dataObj = {
+        firstName: document.querySelector("#first_name").value,
+        lastName: document.querySelector("#sir_name").value,
+        email:document.querySelector("#email").value,
+        password:document.querySelector("#password").value,
+        
+    }
+}
