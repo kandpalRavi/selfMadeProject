@@ -66,6 +66,11 @@
             text-decoration: none;
             color: #1877f2;
         }
+
+        alert {
+            margin: auto;
+            margin-top: 1000px;
+        }
     </style>
 </head>
 
@@ -83,3 +88,25 @@
 </body>
 
 </html>
+<script>
+    document.querySelector("form").addEventListener("submit", checkdata);
+    let personDataLS = JSON.parse(localStorage.getItem("signUpData"))
+    function checkdata(event) {
+        event.preventDefault();
+        let newData = {
+            email: document.querySelector("#email").value,
+            password: document.querySelector("#password").value
+        }
+        // console.log(newData.password)
+        personDataLS.forEach(function (elem) {
+            if (newData.email == "" && newData.password == "") {
+                alert("enter email or password");
+            }
+            else if (newData.email == elem.email && newData.password == elem.password) {
+                document.location.href = "output.html";
+            } else {
+                alert("email or password does not match");
+            }
+        })
+    }
+</script>

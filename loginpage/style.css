@@ -15,6 +15,8 @@ form {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     background-color: #ffffff;
     padding: 10px;
+    outline: 0;
+
 }
 h1 {
     text-align: center;
@@ -42,19 +44,22 @@ h1+p {
 .input_box{
     margin: 10px 5px 10px 0px;
     margin-top:10px;
+    outline: 0;
 
     height:33px;
     width: 46%;
     border-radius: 7px;
-    border: 1px solid;
+    border: 1px solid #e1e3e6;
+
 }
 .input_bo{
     height:33px;
     width: 96%;
     margin:5px 0px 7px 0px;
     border-radius: 7px;
-    border: 1px solid;
+    border: 1px solid #e1e3e6;
 
+    outline: 0;
 
 }
 #pickDate{
@@ -62,6 +67,8 @@ h1+p {
     font-weight: lighter;
     color: #8d949e;
     margin-bottom: px;
+
+
 }
 #dob {
     width: 98%;
@@ -72,6 +79,9 @@ h1+p {
 #dob>select {
     height: 33px;
     border-radius: 6px;
+    outline: 0;
+    border: 1px solid #e1e3e6;
+
 
 }
 #gen {
@@ -90,10 +100,13 @@ h1+p {
     padding-left: 5px;
     padding-right: 5px;
     border-radius: 6px;
+    outline: 0;
     
     flex-direction: row-reverse;
     justify-content: space-between;
-    border: 1px solid black;
+    
+    border: 1px solid #e1e3e6;
+
 }
 
 .markgenderr>p{

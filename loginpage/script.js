@@ -98,6 +98,69 @@ function thisData(elem){
         lastName: document.querySelector("#sir_name").value,
         email:document.querySelector("#email").value,
         password:document.querySelector("#password").value,
-        
+        date:document.querySelector("#date").value,
+        month:document.querySelector("#month").value,
+        year:document.querySelector("#year").value
+    };
+    // console.log(dataObj.date); 
+    // console.log(dataObj.month);
+    if(dataObj.firstName!=""&&dataObj.lastName!=""&&dataObj.email!=""&&dataObj.password!=""){
+        dataArr.push(dataObj);
+        console.log(dataArr);
+        document.location.href="loginpage.html";
+        localStorage.setItem("signUpData",JSON.stringify(dataArr));
+    }else{
+        if(dataObj.firstName==""&&dataObj.lastName==""&&dataObj.email==""&&dataObj.password==""){
+            document.querySelector("#first_name").style.border="1px solid red";
+            document.querySelector("#sir_name").style.border="1px solid red";
+            document.querySelector("#email").style.border="1px solid red";
+            document.querySelector("#password").style.border="1px solid red";
+            document.querySelector("#date").style.border="1px solid red";
+            document.querySelector("#month").style.border="1px solid red";
+            document.querySelector("#year").style.border="1px solid red";
+        }
+        if(dataObj.firstName==""){
+            document.querySelector("#first_name").style.border="1px solid red";
+        }
+        if (dataObj.lastName==""){
+            document.querySelector("#sir_name").style.border="1px solid red";
+        }
+        if(dataObj.email==""){
+            document.querySelector("#email").style.border="1px solid red";
+        }
+        if(dataObj.password==""){
+            document.querySelector("#password").style.border="1px solid red";
+        }
     }
+
+
+    
+    // console.log(dataArr);
+
+}
+document.querySelector("#first_name").onchange=function(){
+    document.querySelector("#first_name").style.border="1px solid #e1e3e6";
+}
+document.querySelector("#sir_name").onchange=function(){
+    document.querySelector("#sir_name").style.border="1px solid #e1e3e6";
+}
+document.querySelector("#email").onchange=function(){
+    document.querySelector("#email").style.border="1px solid #e1e3e6";
+}
+
+document.querySelector("#password").onchange=function(){
+    document.querySelector("#password").style.border="1px solid #e1e3e6";
+}
+
+document.querySelector("#date").onchange=function(){
+    document.querySelector("#date").style.border="1px solid #e1e3e6";
+}
+document.querySelector("#month").onchange=function(){
+    document.querySelector("#month").style.border="1px solid #e1e3e6";
+
+}
+
+document.querySelector("#year").onchange=function(){
+    document.querySelector("#year").style.border="1px solid #e1e3e6";
+
 }
